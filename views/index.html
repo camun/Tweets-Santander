@@ -1,0 +1,132 @@
+<!doctype html>
+<html ng-app="mainApp" ng-controller="mainController">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Tweets Santander Chile</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+        <script src="js/liquidFillGauge.js" language="JavaScript"></script>
+        <script src="js/dashboard.js" language="JavaScript"></script>
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+    </head>
+    <body>
+        <!-- NavBar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <a class="navbar-brand" href="#">
+                    <img class= "img-responsive" src="http://logok.org/wp-content/uploads/2014/06/IBM-logo-blue.png" alt ="logo" style="width:90px;height:55px;position:absolute;bottom:3px;">
+                </a>
+                <div class="navbar-collapse navbar-right collapse">
+                  <img class= "img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Banco_Santander_Logotipo.svg" alt ="logo" style="width:150px;height:50px;margin-top:5px;">
+                </div><!--/.navbar-collapse -->
+            </div><!--/.navbar-collapse -->
+          </div>
+        </nav>
+
+        <!-- Título Gráfico -->
+        <div class="jumbotron">
+          <div class="container">
+              <center><h2>Total Tweets Mensuales </h2></center>
+              <center><div id='dashboard'>
+              </div></center>
+          </div>
+        </div>
+
+        <!-- Circulos con porcentajes totales -->
+        <div class="container">
+          <div class="text-center">
+            <div class="row">
+              <div class="col-md-4">
+                <svg id="fillgauge1" width="50%" height="200"></svg>
+                <h3>Positivo</h3>
+              </div>
+              <div class="col-md-4">
+                <svg id="fillgauge2" width="50%" height="200" ></svg>
+                <h3>Negativos</h3>
+             </div>
+              <div class="col-md-4">
+                <svg id="fillgauge3" width="50%" height="200"></svg>
+                <h3>Neutrales</h3>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <!-- Sección Tweets
+        <div class="container">
+            <div class="column-left">
+            <ul>
+                {{#discriminados.positivos}}
+                <li class="sentiment_positive">
+                <img src="{{payload.tweet.user.profile_image_url}}"/>
+                <div class="tweet">
+                <div class="user"><b>{{payload.tweet.user.name}}</b> <small>{{payload.tweet.user.screen_name}}</small></div>
+                <div class="text">{{payload.tweet.text}}</div>
+                </div></li>
+                {{/discriminados.positivos}}
+            </ul>
+            </div>
+
+            <div class="column-center">
+            <ul>
+                {{#discriminados.negativos}}
+                <li class="sentiment_negative">
+                <img src="{{payload.tweet.user.profile_image_url}}"/>
+                <div class="tweet">
+                <div class="user"><b>{{payload.tweet.user.name}}</b> <small>{{payload.tweet.user.screen_name}}</small></div>
+                <div class="text">{{payload.tweet.text}}</div>
+                </div>
+                </li>
+                {{/discriminados.negativos}}
+            </ul>
+            </div>
+
+            <div class="column-right">
+            <ul>
+                {{#discriminados.neutros}}
+                <li class="sentiment_neutral">
+                <img src="{{payload.tweet.user.profile_image_url}}"/>
+                <div class="tweet">
+                <div class="user"><b>{{payload.tweet.user.name}}</b> <small>{{payload.tweet.user.screen_name}}</small></div>
+                <div class="text">{{payload.tweet.text}}</div>
+                </div>
+                </li>
+                {{/discriminados.neutros}}
+            </ul>
+            </div>
+
+          <footer>
+            <p>&copy; IBM</p>
+          </footer>
+        </div>
+        -->
+        <!-- Configuración gráficos -->
+        <script language="JavaScript">
+
+        </script>
+
+        <!-- Archivos del Framework y Back-end (NO TOCAR) -->
+        <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="/bower_components/angular-flash/dist/angular-flash.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+
+    </body>
+</html>
