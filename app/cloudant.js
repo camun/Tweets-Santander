@@ -6,7 +6,7 @@ exports.queryTotales = function(req, res){
     var bd = Cloudant.use(dbname);
     bd.find({
         "selector": {
-            "_id": "2b6d4575ff7063a9dad8ad69be048ccb"
+            "_id": "324cb8c74f1238698a584bab42f3fbab"
         },
         "fields": [
             "2016"
