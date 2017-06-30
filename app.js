@@ -8,7 +8,7 @@ var express = require('express')
 
 var config = require('./config/config.js');
 var cloudant = require('./app/cloudant');
-
+//borrar
 app.configure(function() {
 
     // set up our express application
