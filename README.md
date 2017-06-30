@@ -1,32 +1,50 @@
-#Proyecto Bluemix IBM-Chile (Students)
+# Proyecto Bluemix IBM-Chile (Students)
 
 Proyecto para Banco Santander sobre análisis de Tweets. Este proyecto usa aplicaciones directas de Bluemix y es desarrollado a modo de CEAN stack (Cloudant, ExpressJS, AngularJS y NodeJS).
 
-#Como ejecutarlo por primera vez:
+## Antes de comenzar
 
-	-Clonar el repositorio (git clone https://www.github.com/sebaatd/Tweets-Santander)
-	-En la carpeta principal ejecutar:
-		'npm install'
-		'bower install'
+Es importante tener instalados algunas herramientas para administrar y ejecutar dependencias.
 
-#Iniciar la aplicación
+	-Git: https://git-scm.com/downloads
+	-NodeJS: https://nodejs.org/es/
+    -Bower (requiere NodeJS instalado): npm install -g bower
 
-Ir al archivo 'config.js' y modificar los siguientes datos:
+##Como ejecutarlo por primera vez:
+Primero, clonar el repositorio:
 
-	-config.cloudant.account = "usuarioCloudant"
-	-config.cloudant.password = "contraseñaCloudant"
+	git clone https://www.github.com/sebaatd/Tweets-Santander
 
-### Correr la aplicación
+Abrir terminal como administrador en la carpeta del proyecto y ejecutar:
 
-Como cualquier aplicación express:
+	'npm install'
+	'bower install'
 
-    node app.js
+##Configurar Cloudant
+Abrir el archivo ubicado en "config/config.js" y modificar los siguientes campos:
+
+	config.cloudant.dbname = "cane_passport"
+	config.cloudant.account = "usuarioCloudant"
+	config.cloudant.password = "contraseñaCloudant"
+
+Donde usuarioCloudant y contraseñaCloudant son las credenciales para acceder a la base de datos y cane_passport es una BD temporal.
+
+## Correr la aplicación
+
+Como cualquier aplicación express, ejecutar desde el terminal:
+
+    'node app.js'
+
+Finalmente abrir en el navegador: localhost:3000
 
 Es recomendable instalar nodemon para no estar ejecutando el comando anterior cada vez que se haga un cambio:
-	
+
 	'npm install -g nodemon'
 
-## Directory Layout 
+Esto reiniciará el servidor cada vez que se guarde algún cambio.
+
+## Directorio
+La estructura de trabajo es la siguiente:
     
     app.js              --> app config
     package.json        --> for npm
