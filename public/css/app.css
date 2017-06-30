@@ -66,12 +66,12 @@ li.sentiment_neutral {
   margin-left: 10px;
 }
 .column-left{
-  float: left; width: 33%;
+  float: left; width: 34%;
   height: 600px;
   overflow: auto;
 }
 .column-right{
-  float: right; width: 35%;
+  float: right; width: 34%;
   height: 600px;
   overflow: auto;
 }

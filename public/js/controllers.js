@@ -67,5 +67,32 @@ mainAppControllers.controller('mainController', ['$scope','$http',
             console.log("data:" +data.message);
         });
 
+        $http({method: 'GET', url:'/queryPrueba'}).
+        success(function(data, status, headers, config){
+            console.log(data);
+            $scope.records= data;
+        }).
+        error(function(data, status, headers, config){
+            console.log("data:" +data.message);
+        });
+
+        $http({method: 'GET', url:'/queryPositivos'}).
+        success(function(data, status, headers, config){
+            console.log(data);
+            $scope.positivos= data;
+        }).
+        error(function(data, status, headers, config){
+            console.log("data:" +data.message);
+        });
+
+        $http({method: 'GET', url:'/queryNeutros'}).
+        success(function(data, status, headers, config){
+            console.log(data);
+            $scope.neutrals= data;
+        }).
+        error(function(data, status, headers, config){
+            console.log("data:" +data.message);
+        });
+
     }
 ]);

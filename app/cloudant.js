@@ -30,3 +30,107 @@ exports.queryTotales = function(req, res){
     });
 };
 
+//negatives
+exports.prueba = function(req, res){
+    var config = require('../config/config.js');
+    var Cloudant = require('cloudant')({account:config.cloudant.account, password:config.cloudant.password});
+    var dbname = 'tweetsclasificados';
+    var bd = Cloudant.use(dbname);
+
+    bd.find({
+            "selector": {
+                "payload.sentiment.type": "negative"
+            },
+            "fields": [
+                "tweet.user.profile_image_url",
+                "tweet.user.name",
+                "tweet.user.screen_name",
+                "tweet.text"
+            ],
+            "sort": [
+                {
+                    "_id": "desc"
+                }
+            ],
+            "limit": 10
+        }, function(err, result) {
+            if (!err) {
+                console.log(result.docs);
+                res.json(result.docs);
+            }
+            else {
+                console.log(err.reason);
+            }
+        }
+    )
+};
+
+//positives
+exports.positives = function(req, res){
+    var config = require('../config/config.js');
+    var Cloudant = require('cloudant')({account:config.cloudant.account, password:config.cloudant.password});
+    var dbname = 'tweetsclasificados';
+    var bd = Cloudant.use(dbname);
+
+    bd.find({
+            "selector": {
+                "payload.sentiment.type": "positive"
+            },
+            "fields": [
+                "tweet.user.profile_image_url",
+                "tweet.user.name",
+                "tweet.user.screen_name",
+                "tweet.text"
+            ],
+            "sort": [
+                {
+                    "_id": "desc"
+                }
+            ],
+            "limit": 10
+        }, function(err, result) {
+            if (!err) {
+                console.log(result.docs);
+                res.json(result.docs);
+            }
+            else {
+                console.log(err.reason);
+            }
+        }
+    )
+};
+
+//neutrals
+exports.neutros = function(req, res){
+    var config = require('../config/config.js');
+    var Cloudant = require('cloudant')({account:config.cloudant.account, password:config.cloudant.password});
+    var dbname = 'tweetsclasificados';
+    var bd = Cloudant.use(dbname);
+
+    bd.find({
+            "selector": {
+                "payload.sentiment.type": "neutral"
+            },
+            "fields": [
+                "tweet.user.profile_image_url",
+                "tweet.user.name",
+                "tweet.user.screen_name",
+                "tweet.text"
+            ],
+            "sort": [
+                {
+                    "_id": "desc"
+                }
+            ],
+            "limit": 10
+        }, function(err, result) {
+            if (!err) {
+                console.log(result.docs);
+                res.json(result.docs);
+            }
+            else {
+                console.log(err.reason);
+            }
+        }
+    )
+};

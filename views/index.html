@@ -66,48 +66,48 @@
           <hr>
         </div>
 
-        <!-- Sección Tweets
+
         <div class="container">
             <div class="column-left">
-            <ul>
-                {{#discriminados.positivos}}
-                <li class="sentiment_positive">
-                <img src="{{payload.tweet.user.profile_image_url}}"/>
-                <div class="tweet">
-                <div class="user"><b>{{payload.tweet.user.name}}</b> <small>{{payload.tweet.user.screen_name}}</small></div>
-                <div class="text">{{payload.tweet.text}}</div>
-                </div></li>
-                {{/discriminados.positivos}}
-            </ul>
+                <div ng-repeat="x in positivos">
+                <ul>
+                    <li class="sentiment_positive">
+                        <img src="{{x.tweet.user.profile_image_url}}"/>
+                        <div class="tweet">
+                            <div class="user"><b>{{x.tweet.user.name}}</b> <small>{{x.tweet.user.screen_name}}</small></div>
+                            <div class="text">{{x.tweet.text}}</div>
+                        </div></li>
+                </ul>
+                </div>
             </div>
 
             <div class="column-center">
-            <ul>
-                {{#discriminados.negativos}}
-                <li class="sentiment_negative">
-                <img src="{{payload.tweet.user.profile_image_url}}"/>
-                <div class="tweet">
-                <div class="user"><b>{{payload.tweet.user.name}}</b> <small>{{payload.tweet.user.screen_name}}</small></div>
-                <div class="text">{{payload.tweet.text}}</div>
-                </div>
-                </li>
-                {{/discriminados.negativos}}
-            </ul>
+                <div ng-repeat="x in records">
+                <ul>
+                    <li class="sentiment_negative">
+                        <img src="{{x.tweet.user.profile_image_url}}"/>
+                        <div class="tweet">
+                            <div class="user"><b>{{x.tweet.user.name}}</b> <small>{{x.tweet.user.screen_name}}</small></div>
+                            <div class="text">{{x.tweet.text}}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             </div>
 
             <div class="column-right">
-            <ul>
-                {{#discriminados.neutros}}
-                <li class="sentiment_neutral">
-                <img src="{{payload.tweet.user.profile_image_url}}"/>
-                <div class="tweet">
-                <div class="user"><b>{{payload.tweet.user.name}}</b> <small>{{payload.tweet.user.screen_name}}</small></div>
-                <div class="text">{{payload.tweet.text}}</div>
-                </div>
-                </li>
-                {{/discriminados.neutros}}
-            </ul>
+                <div ng-repeat="x in neutrals">
+                <ul>
+                    <li class="sentiment_neutral">
+                        <img src="{{x.tweet.user.profile_image_url}}"/>
+                        <div class="tweet">
+                            <div class="user"><b>{{x.tweet.user.name}}</b> <small>{{x.tweet.user.screen_name}}</small></div>
+                            <div class="text">{{x.tweet.text}}</div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+        </div>
 
           <footer>
             <p>&copy; IBM</p>
