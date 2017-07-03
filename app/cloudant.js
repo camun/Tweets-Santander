@@ -31,7 +31,7 @@ exports.queryTotales = function(req, res){
 };
 
 //negatives
-exports.prueba = function(req, res){
+exports.negatives = function(req, res){
     var config = require('../config/config.js');
     var Cloudant = require('cloudant')({account:config.cloudant.account, password:config.cloudant.password});
     var dbname = 'tweetsclasificados';

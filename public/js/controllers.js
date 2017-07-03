@@ -67,10 +67,10 @@ mainAppControllers.controller('mainController', ['$scope','$http',
             console.log("data:" +data.message);
         });
 
-        $http({method: 'GET', url:'/queryPrueba'}).
+        $http({method: 'GET', url:'/queryNegativos'}).
         success(function(data, status, headers, config){
             console.log(data);
-            $scope.records= data;
+            $scope.negativos= data;
         }).
         error(function(data, status, headers, config){
             console.log("data:" +data.message);

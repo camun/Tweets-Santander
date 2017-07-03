@@ -6,7 +6,7 @@ module.exports = function(app, cloudant) {
 
     //Importante: Este es el get que obtiene los totales
     app.get('/query', cloudant.queryTotales);
-    app.get('/queryPrueba', cloudant.prueba);
+    app.get('/queryNegativos', cloudant.negatives);
     app.get('/queryPositivos', cloudant.positives);
     app.get('/queryNeutros', cloudant.neutros);
 
