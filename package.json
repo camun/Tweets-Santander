@@ -8,6 +8,7 @@
     "passport": "*",
     "passport-local": "*",
     "bcrypt": "*",
-    "cloudant": "^0.1.0"
+    "cloudant": "^0.1.0",
+    "grunt": "^1.0.1"
   }
 }
