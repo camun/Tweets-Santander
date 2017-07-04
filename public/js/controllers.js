@@ -27,6 +27,21 @@ mainAppControllers.controller('mainController', ['$scope','$http',
             $scope.categorizados = categorizados;
             $scope.tweetsTotales = totales+500;
 
+            //fecha hoy
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if(dd<10) {
+                dd = '0'+dd
+            }
+
+            if(mm<10) {
+                mm = '0'+mm
+            }
+
+            $scope.today = mm + '/' + dd + '/' + yyyy;
         }).
         error(function(data, status, headers, config){
             console.log("data:" +data.message);
