@@ -19,7 +19,6 @@ mainAppControllers.controller('mainController', ['$scope','$http',
             var negativos = data["2016"].negativos;
             var neutros = data["2016"].neutros;
             var categorizados = data["2016"].clasificados;
-            console.log(data["2016"]);
             //Variables para la vista
             $scope.positivosTotales = positivos;
             $scope.negativosTotales = negativos;
@@ -78,16 +77,13 @@ mainAppControllers.controller('mainController', ['$scope','$http',
 
         $http({method: 'GET', url:'/queryNegativos'}).
         success(function(data, status, headers, config){
-            console.log(data);
             $scope.negativos= data;
         }).
         error(function(data, status, headers, config){
-            console.log("data:" +data.message);
         });
 
         $http({method: 'GET', url:'/queryPositivos'}).
         success(function(data, status, headers, config){
-            console.log(data);
             $scope.positivos= data;
         }).
         error(function(data, status, headers, config){
@@ -96,7 +92,6 @@ mainAppControllers.controller('mainController', ['$scope','$http',
 
         $http({method: 'GET', url:'/queryNeutros'}).
         success(function(data, status, headers, config){
-            console.log(data);
             $scope.neutrals= data;
         }).
         error(function(data, status, headers, config){
