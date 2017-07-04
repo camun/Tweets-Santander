@@ -19,7 +19,7 @@ mainAppControllers.controller('mainController', ['$scope','$http',
             var negativos = data["2016"].negativos;
             var neutros = data["2016"].neutros;
             var categorizados = data["2016"].clasificados;
-
+            console.log(data["2016"]);
             //Variables para la vista
             $scope.positivosTotales = positivos;
             $scope.negativosTotales = negativos;
@@ -42,6 +42,35 @@ mainAppControllers.controller('mainController', ['$scope','$http',
             }
 
             $scope.today = mm + '/' + dd + '/' + yyyy;
+
+            /*
+             * BAR CHART
+             * ---------
+             */
+            var bar_data = {
+              data: [["Ene", 0], ["Feb", 0], ["Mar", 0], ["Abr", 0], ["May", data["2016"].mayo.totales], ["Jun", data["2016"].junio.totales],["Jul", 0],["Ago", 0],["Sep", 0],["Oct", 0],["Nov", 0],["Dic", 0]],
+              color: "#3c8dbc"
+            };
+            $.plot("#bar-chart", [bar_data], {
+              grid: {
+                borderWidth: 1,
+                borderColor: "#f3f3f3",
+                tickColor: "#f3f3f3"
+              },
+              series: {
+                bars: {
+                  show: true,
+                  barWidth: 0.5,
+                  align: "center"
+                }
+              },
+              xaxis: {
+                mode: "categories",
+                tickLength: 0
+              }
+            });
+            /* END BAR CHART */
+
         }).
         error(function(data, status, headers, config){
             console.log("data:" +data.message);
